@@ -1,0 +1,305 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solution Admin</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .sidebar {
+        width: 250px;
+        min-height: 100vh;
+        background: #212529;
+      }
+
+      .sidebar .nav-link {
+        color: #adb5bd;
+        padding: 12px 20px;
+      }
+
+      .sidebar .nav-link:hover {
+        background-color: #343a40;
+        color: white;
+      }
+
+      .sidebar .nav-link.active {
+        background-color: #0d6efd;
+        color: white;
+      }
+
+      .content {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid #495057;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">Solution</div>
+
+        <ul class="nav flex-column mt-3">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              asp-controller="Dashboard"
+              asp-action="Index"
+            >
+              Dashboard
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" asp-controller="Slider" asp-action="Index">
+              Sliders
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" asp-controller="Service" asp-action="Index">
+              Services
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" asp-controller="About" asp-action="Index">
+              About
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" asp-controller="Team" asp-action="Index">
+              Team
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" asp-controller="Portfolio" asp-action="Index">
+              Portfolio
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" asp-controller="Contact" asp-action="Index">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <nav class="navbar navbar-light bg-light rounded shadow-sm mb-4">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1"> Admin Panel </span>
+          </div>
+        </nav>
+
+        <main>
+          <div class="container-fluid">
+            <div class="mb-4">
+              <h2 class="fw-bold">Dashboard</h2>
+              <p class="text-muted">Welcome to Solution Admin Panel</p>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Services</h5>
+                    <h2 class="fw-bold text-primary">12</h2>
+                    <p class="text-muted mb-0">Total Services</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Team</h5>
+                    <h2 class="fw-bold text-success">8</h2>
+                    <p class="text-muted mb-0">Team Members</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Portfolio</h5>
+                    <h2 class="fw-bold text-warning">25</h2>
+                    <p class="text-muted mb-0">Projects</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Messages</h5>
+                    <h2 class="fw-bold text-danger">5</h2>
+                    <p class="text-muted mb-0">Unread Messages</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-5">
+              <div class="col-lg-8">
+                <div class="card shadow-sm border-0">
+                  <div class="card-header bg-white">
+                    <h5 class="mb-0">Recent Activities</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">New service added.</li>
+
+                      <li class="list-group-item">Team member updated.</li>
+
+                      <li class="list-group-item">Portfolio item created.</li>
+
+                      <li class="list-group-item">Contact message received.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card shadow-sm border-0">
+                  <div class="card-header bg-white">
+                    <h5 class="mb-0">Quick Actions</h5>
+                  </div>
+                  <div class="card-body d-grid gap-2">
+                    <a
+                      asp-controller="Service"
+                      asp-action="Create"
+                      class="btn btn-primary"
+                    >
+                      Add Service
+                    </a>
+
+                    <a
+                      asp-controller="Team"
+                      asp-action="Create"
+                      class="btn btn-success"
+                    >
+                      Add Team Member
+                    </a>
+
+                    <a
+                      asp-controller="Portfolio"
+                      asp-action="Create"
+                      class="btn btn-warning"
+                    >
+                      Add Portfolio
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team -->
+
+          @{ ViewData["Title"] = "Team"; }
+
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Team Members</h2>
+
+            <a
+              asp-controller="Team"
+              asp-action="Create"
+              class="btn btn-primary"
+            >
+              Add New Member
+            </a>
+          </div>
+
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <table class="table table-bordered table-hover align-middle">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Job</th>
+                    <th>Description</th>
+                    <th width="220">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>John Smith</td>
+                    <td>Frontend Developer</td>
+                    <td>Experienced React Developer</td>
+
+                    <td>
+                      <a href="#" class="btn btn-info btn-sm"> Detail </a>
+
+                      <a href="#" class="btn btn-warning btn-sm"> Edit </a>
+
+                      <a href="#" class="btn btn-danger btn-sm"> Delete </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>Emily Johnson</td>
+                    <td>UI/UX Designer</td>
+                    <td>Creative design specialist</td>
+
+                    <td>
+                      <a href="#" class="btn btn-info btn-sm"> Detail </a>
+
+                      <a href="#" class="btn btn-warning btn-sm"> Edit </a>
+
+                      <a href="#" class="btn btn-danger btn-sm"> Delete </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>3</td>
+                    <td>Michael Brown</td>
+                    <td>Backend Developer</td>
+                    <td>ASP.NET Core expert</td>
+
+                    <td>
+                      <a href="#" class="btn btn-info btn-sm"> Detail </a>
+
+                      <a href="#" class="btn btn-warning btn-sm"> Edit </a>
+
+                      <a href="#" class="btn btn-danger btn-sm"> Delete </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
